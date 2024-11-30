@@ -1,0 +1,13 @@
+<div>
+  <h1>To-Do List</h1>
+  <input #itemInput type="text" placeholder="Add a new task">
+  <button (click)="addToDoItem(itemInput.value); itemInput.value=''">Add</button>
+
+  <ul>
+    <li *ngFor="let item of toDoList">
+      <span [class.completed]="item.completed">{{ item.title }}</span>
+      <button (click)="toggleCompletion(item)">Complete</button>
+      <button (click)="removeToDoItem(item)">Delete</button>
+    </li>
+  </ul>
+</div>
